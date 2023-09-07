@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="We present Strand Integration, a refinement method for hair geometry by incorporating the gradient of strands.">
+
+  <meta property="og:title" content="Refinement of Hair Geometry by Strand Integration" />
+  <meta property="og:description" content="We present Strand Integration, a refinement method for hair geometry by incorporating the gradient of strands."/>
+  <meta property="og:url" content="https://elerac.github.io/strand_integration/" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/banner.jpg"/>
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="600" />
+
+
+  <meta name="twitter:title" content="Refinement of Hair Geometry by Strand Integration">
+  <meta name="twitter:description" content="We present Strand Integration, a refinement method for hair geometry by incorporating the gradient of strands."/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/banner.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="Hair, Hair Capture, Hair Reconstruction, Strand">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Refinement of Hair Geometry by Strand Integration</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Refinement of Hair Geometry <br> by Strand Integration</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://elerac.github.io/" target="_blank">Ryota Maeda</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://kenshi84.github.io/" target="_blank">Kenshi Takayama</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://taketomitakafumi.sakura.ne.jp/web/en/" target="_blank">Takafumi Taketomi</a><sup>2</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup> University of Hyogo &nbsp;<sup>2</sup> CyberAgent, AI Lab <br>Computer Graphics Forum (Proc. of Pacific Graphics 2023)</span>
+              <span class="eql-cntrb"><small><br>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://github.com/elerac/strand_integration" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaser video-->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video poster="" id="tree" autoplay muted loop height="100%">
+          <source src="static/videos/PG2023_teaser.mp4" type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered"><br>
+          Our strand integration technique refines the inaccurate hair strand by integrating the gradient along the strand. 
+          Left: Initial hair geometry from LPMVS [Nam+, CVPR'19]. 
+          Right: Refined hair geometry using our method. 
+          Our method improves the accuracy of the hair geometry without any additional data. 
+        </h2>
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Reconstructing 3D hair is challenging due to its complex micro-scale geometry, and is of essential importance for the efficient creation of high-fidelity virtual humans. 
+              Existing hair capture methods based on multi-view stereo tend to generate results that are noisy and inaccurate. 
+              In this study, we propose a refinement method for hair geometry by incorporating the gradient of strands into the computation of their position. 
+              We formulate a gradient integration strategy for hair strands. We evaluate the performance of our method using a synthetic multi-view dataset containing four hairstyles, and show that our refinement produces more accurate hair geometry. 
+              Furthermore, we tested our method with a real image input.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- End Abstract -->
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <!-- Strand integration -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Strand Integration</h2>
+
+          <div class="columns">
+            
+            <div class="column is-two-thirds">
+              <p>
+                We propose a refinement method for hair geometry by incorporating the gradient of strands into the computation of their position.
+                The basic concept of this method is to harness the position and direction information for improving geometrical coherence. 
+                If we move along a 3D line following its direction, we will likely encounter another 3D line that represents another piece of the same strand. 
+                By following successive 3D lines, we can determine the shape of an entire strand of hair.  
+                We formulate this relationship similar to normal integration but for 3D lines.
+              </p>
+            </div>
+            <div class="column is-one-third">
+              <video poster="" id="tree" autoplay muted loop height="100%">
+                <source src="static/videos/si_animation.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- End Strand integration -->
+
+      <!-- Overrall pipeline -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Overall Pipeline</h2>
+          <p>
+            The input images are captured under a multi-view camera condition. 
+            As a preprocessing, we reconstruct 3D lines (depth and direction) using LPMVS. 
+            These 3D lines become the input to our method, Strand Integration, which refines the depth map for each view. 
+            While our method can work without any extra input, we can also optionally accept a normal map as an additional input. 
+            We can obtain the hair geometry as a set of 3D lines by accumulating.
+          </p>
+          <img src="static/images/pipeline_strand_integration.jpg" alt="Pipelein image" height="100%">
+        </div>
+      </div>
+      <!-- End overall pipeline -->
+
+      <!-- Results -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+
+          <h2 class="title is-3">Results</h2>
+
+          <h3 class="title is-4">Synthetic data</h3>
+
+          <!-- Depth map -->
+          <p>
+            We evaluated our method using a synthetic data containing four hairstyles. We evaluated with MAE/RMASE of the depth map, and achived lower error compared to LPMVS.
+          </p>
+          <img src="static/images/result_synthetic_depth.jpg" alt="result image" height="100%">
+          <!-- End depth map -->
+
+          <!-- Point cloud (synthetic) -->
+          <p>
+            We also evaluated with merged 3D points from all views. Our method reduced the noisy points.
+          </p>
+          <div class="columns">
+            <div class="column">
+              <img src="static/images/result_synthetic_pcd_straight.jpg" alt="result image" height="100%">
+              <p class="has-text-centered">Straight</p>
+            </div>
+            <div class="column">
+              <img src="static/images/result_synthetic_pcd_curly.jpg" alt="result image" height="100%">
+              <p class="has-text-centered">Curly</p>
+            </div>
+          </div>
+
+          <div class="columns">
+            <div class="column">
+              <img src="static/images/result_synthetic_pcd_wavy.jpg" alt="result image" height="100%">
+              <p class="has-text-centered">Wavy</p>
+            </div>
+            <div class="column">
+              <img src="static/images/result_synthetic_pcd_wavythin.jpg" alt="result image" height="100%">
+              <p class="has-text-centered">Wavy Thin</p>
+            </div>
+          </div>
+          <!-- End point cloud (synthetic) -->
+
+          <h3 class="title is-4">Real data</h3>
+
+          <!-- Point cloud (real) -->
+          <p>
+            Also in a real capture scenario, our refinement method achieves less noise and denser 3D lines.
+          </p>
+          <img src="static/images/result_real_pcd.jpg" alt="result image" height="70%" width="70%" style="display: block; margin: auto;">
+          <!-- End point cloud (real) -->
+
+        </div>
+      </div>
+      <!-- End results -->
+    </div>
+  </section>
+
+
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>BibTex Code Here</code></pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the of this website, we just ask that you link back to this page in the footer.
+              <br> This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
